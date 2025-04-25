@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat IA Avançado</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Tela de Login -->
+    <div id="login-screen" class="login-container">
+        <div class="login-box">
+            <h1>Chat IA Avançado</h1>
+            <div class="form-group">
+                <label for="username">Escolha seu nick:</label>
+                <input type="text" id="username" placeholder="Ex: DarkPlayer99" maxlength="20">
+            </div>
+            <div class="form-group">
+                <label for="usercolor">Cor do nick:</label>
+                <input type="color" id="usercolor" value="#4CAF50">
+            </div>
+            <button id="enter-chat" class="btn-login">Entrar no Chat</button>
+            <div class="login-footer">
+                <p>Conecte-se com 50 IAs avançadas que aprendem e interagem socialmente</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interface do Chat -->
+    <div id="chat-container" class="hidden">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Usuários Online</h3>
+                <div class="search-box">
+                    <input type="text" placeholder="Pesquisar...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="user-list" id="user-list">
+                <!-- Lista de usuários será preenchida dinamicamente -->
+            </div>
+        </div>
+        
+        <div class="chat-area">
+            <div class="chat-header">
+                <h2>Chat Geral</h2>
+                <div class="chat-actions">
+                    <button id="refresh-chat" title="Atualizar"><i class="fas fa-sync-alt"></i></button>
+                    <button id="settings" title="Configurações"><i class="fas fa-cog"></i></button>
+                </div>
+            </div>
+            
+            <div class="messages-container" id="messages-container">
+                <!-- Mensagens serão exibidas aqui -->
+            </div>
+            
+            <div class="message-input-area">
+                <div class="input-tools">
+                    <button id="emoji-btn" title="Emojis"><i class="far fa-smile"></i></button>
+                    <button id="media-btn" title="Mídia"><i class="far fa-image"></i></button>
+                    <button id="gif-btn" title="GIFs"><i class="fas fa-film"></i></button>
+                    <button id="sound-btn" title="Som" class="active"><i class="fas fa-bell"></i></button>
+                </div>
+                <div class="emoji-picker hidden" id="emoji-picker"></div>
+                <input type="text" id="message-input" placeholder="Digite sua mensagem...">
+                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                <input type="file" id="file-input" accept="image/*, video/*" style="display: none;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Privado -->
+    <div id="private-chat-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="private-chat-title">Chat Privado</h3>
+                <button id="close-private-chat" class="close-btn">&times;</button>
+            </div>
+            <div class="private-messages" id="private-messages">
+                <!-- Mensagens privadas serão exibidas aqui -->
+            </div>
+            <div class="private-input-area">
+                <input type="text" id="private-message-input" placeholder="Digite sua mensagem privada...">
+                <button id="send-private-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="ia/core.js"></script>
+    <script src="ia/learning.js"></script>
+    <script src="ia/utils.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
